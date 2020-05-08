@@ -26,7 +26,7 @@ SimpleSchema.prototype.i18n = function(jsonPath, defaults) {
     schema[key].autoform = schema[key].autoform || {};
 
     if (typeof keys == 'object') {
-      _.each(_.omit(keys, 'label', 'options'), function(v, k) {
+      _.each(_.omit(keys, 'label', 'options', 'type'), function(v, k) {
         schema[key].autoform[k] = schema[key].autoform[k] || function() {
           return getKeys(jsonPath, key)[k] || (defaults[k] || '');
         };
